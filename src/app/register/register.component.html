@@ -1,0 +1,85 @@
+<section class="h-100 bg-dark">
+  <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                  alt="Sample photo"
+                  class="img-fluid"
+                  style="
+                    border-top-left-radius: 0.25rem;
+                    border-bottom-left-radius: 0.25rem;
+                  "
+                />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase">Student registration form</h3>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="text"
+                      id="form3Example97"
+                      class="form-control form-control-lg"
+                      name="name"
+                      formControlName="name"
+                    />
+                    <label class="form-label" for="form3Example97">Name</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      id="form3Example97"
+                      class="form-control form-control-lg"
+                      name="email"
+                      formControlName="email"
+                    />
+                    <label class="form-label" for="form3Example97"
+                      >Email ID</label
+                    >
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      id="form3Example97"
+                      class="form-control form-control-lg"
+                      name="password"
+                      formControlName="password"
+                    />
+                    <label class="form-label" for="form3Example97"
+                      >Password</label
+                    >
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      id="form3Example97"
+                      class="form-control form-control-lg"
+                      name="contact"
+                      formControlName="contact"
+                    />
+                    <label class="form-label" for="form3Example97"
+                      >Contact</label
+                    >
+                  </div>
+                  <div class="d-flex justify-content-end pt-3">
+                    <input
+                      type="submit"
+                      class="btn btn-warning btn-lg ms-2"
+                      name="submit"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
