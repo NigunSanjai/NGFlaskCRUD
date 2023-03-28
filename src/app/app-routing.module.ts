@@ -7,7 +7,7 @@ import { ListusersComponent } from './listusers/listusers.component';
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'list-user', component: ListusersComponent },
-  {path : 'login', component:LoginComponent}
+  { path: '', component: LoginComponent },
 ];
 
 @NgModule({

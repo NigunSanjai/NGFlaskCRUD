@@ -3,6 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Users } from './users.model';
 import { map } from 'rxjs';
 
+interface response {
+  result: boolean;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -25,15 +29,16 @@ export class UsersService {
         })
       );
   }
+
   public checkUser(email: any, password: any) {
     return this.httpClient
-      .post<any>(this.baseUrl + 'users', {
+      .post<any>(this.baseUrl + 'login', {
         email,
         password,
       })
       .pipe(
-        map((Users: any) => {
-          return Users;
+        map((response: any) => {
+          return response;
         })
       );
   }
