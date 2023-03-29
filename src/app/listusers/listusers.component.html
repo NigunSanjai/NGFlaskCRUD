@@ -1,1 +1,141 @@
-<p>listusers works!</p>
+<section
+  class="h-100 gradient-form gradient-custom-2"
+  style="background-color: #eee"
+>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div style="background-image: linear-gradient(#e86729, pink)">
+              <div class="card-body p-md-5 mx-md-4">
+                <div class="text-center">
+                  <img
+                    src="../../assets/undraw_Finance_re_gnv2.png"
+                    style="width: 185px"
+                    alt="logo"
+                  />
+                  <h4 class="mt-1 pb-1" style="margin-bottom: 2rem">
+                    The <span>FutureSee</span>
+                  </h4>
+                </div>
+
+                <form (ngSubmit)="onSubmit()" [formGroup]="dashboardForm">
+                  <p
+                    style="
+                      margin-bottom: 10px;
+                      font-size: 1.2rem;
+                      font-weight: 600;
+                      margin-bottom: 2rem;
+                      text-align: center;
+                    "
+                  >
+                    Foresee your Finance Now!!
+                  </p>
+
+                  <div class="form-outline mb-4 block">
+                    <label for="exampleInputName"
+                      >Select the value you wish to forecast</label
+                    >
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      name="value"
+                      (change)="ngOnChange1($event)"
+                    >
+                      <option selected>Open this select menu</option>
+                      <option value="1">ORDER_NUMBER</option>
+                      <option value="2">QUANTITY_ORDERED</option>
+                      <option value="3">PRICE_EACH</option>
+                      <option value="4">ORDER_LINE_NUMBER</option>
+                      <option value="5">SALES</option>
+                      <option value="6">STATUS</option>
+                      <option value="7">QTR_ID</option>
+                      <option value="8">MONTH_ID</option>
+                      <option value="9">YEAR_ID</option>
+                      <option value="10">PRODUCT_LINE</option>
+                      <option value="11">MSRP</option>
+                      <option value="12">COUNTRY</option>
+                      <option value="13">DEAL_SIZE</option>
+                    </select>
+                  </div>
+                  <div class="form-outline mb-4 block">
+                    <label for="exampleInputEmail1" required="required"
+                      >Enter the Period</label
+                    >
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                      name="timeperiod"
+                      (change)="ngOnChange($event)"
+                    >
+                      <option selected>Open this select menu</option>
+                      <option value="YEARLY">YEARLY</option>
+                      <option value="MONTHLY">MONTHLY</option>
+                      <option value="WEEKLY">WEEKLY</option>
+                      <option value="DAY_WISE">DAY_WISE</option>
+                    </select>
+                  </div>
+                  <div class="form-outline mb-4 block">
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                      "
+                    >
+                      <label for="exampleFormControlSelect1"
+                        >Number of Period</label
+                      >
+                      <div
+                        class="form-outline"
+                        style="width: 22rem; display: contents"
+                      >
+                        <input
+                          (change)="ngOnChange2($event)"
+                          value="0"
+                          type="number"
+                          id="typeNumber"
+                          class="form-control"
+                          name="number"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-outline mb-4 block">
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                      "
+                    >
+                      <label class="mr-2">Upload your CV:</label>
+                      <input
+                        type="file"
+                        name="file"
+                        accept=".csv"
+                        name="file"
+                        formControlName="file"
+                        (change)="getFile($event)"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <input
+                      type="submit"
+                      class="btn btn-warning btn-lg ms-2"
+                      name="submit"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -21,11 +21,13 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private usersService: UsersService,
     private router: Router
-  ) {}
+  ) {
+    sessionStorage.clear();
+  }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      email: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
       password: ['', Validators.required],
     });
   }
@@ -33,10 +35,13 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     const email = this.loginForm.get('email')?.value;
     const password = this.loginForm.get('password')?.value;
-
+    debugger;
     this.usersService.checkUser(email, password).subscribe((response) => {
       if (response.result) {
-        this.router.navigate(['/list-user']);
+        sessionStorage.setItem('email', email);
+        sessionStorage.setItem('user_id', response.user_id);
+        alert('Welcome User!');
+        this.router.navigate(['/dashboard'], {});
       } else {
         this.error = true;
       }

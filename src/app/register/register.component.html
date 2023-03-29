@@ -1,4 +1,4 @@
-<section class="h-100 bg-dark">
+<!-- <section class="h-100 bg-dark">
   <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -82,4 +82,115 @@
       </div>
     </div>
   </form>
+</section> -->
+<section
+  class="h-100 gradient-form gradient-custom-2"
+  style="background-color: #eee"
+>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div style="background-image: linear-gradient(#e86729, pink)">
+              <div class="card-body p-md-5 mx-md-4">
+                <div class="text-center">
+                  <img
+                    src="../../assets/undraw_Finance_re_gnv2.png"
+                    style="width: 185px"
+                    alt="logo"
+                  />
+                  <h4 class="mt-1 pb-1" style="margin-bottom: 2rem">
+                    The <span>FutureSee</span>
+                  </h4>
+                </div>
+
+                <form
+                  [formGroup]="angForm"
+                  (ngSubmit)="postdata(angForm)"
+                  autocomplete="off"
+                >
+                  <p
+                    style="
+                      margin-bottom: 10px;
+                      font-size: 1.2rem;
+                      font-weight: 600;
+                      margin-bottom: 2rem;
+                      text-align: center;
+                    "
+                  >
+                    Register Now to Foresee your Finance
+                  </p>
+
+                  <div class="form-outline mb-4 block">
+                    <label class="form-label" for="form2Example11"
+                      >Enter Your Username</label
+                    >
+                    <input
+                      type="text"
+                      id="form2Example11"
+                      class="form-control"
+                      name="name"
+                      formControlName="name"
+                      placeholder="Your UserName"
+                    />
+                  </div>
+                  <div class="form-outline mb-4 block">
+                    <label class="form-label" for="form2Example11"
+                      >Enter your Email ID</label
+                    >
+                    <input
+                      type="email"
+                      id="form2Example11"
+                      class="form-control"
+                      name="email"
+                      formControlName="email"
+                      placeholder="Your Email Id"
+                    />
+                  </div>
+                  <div class="form-outline mb-4 block">
+                    <label class="form-label" for="form2Example11"
+                      >Enter your Password</label
+                    >
+                    <input
+                      type="text"
+                      id="form2Example11"
+                      class="form-control"
+                      id="email"
+                      name="password"
+                      formControlName="email"
+                      placeholder="Your Password"
+                    />
+                  </div>
+
+                  <div class="form-outline mb-4 block">
+                    <label class="form-label" for="form2Example22" required
+                      >Enter your Phone Number</label
+                    >
+                    <input
+                      type="password"
+                      id="form2Example22"
+                      class="form-control"
+                      name="contact"
+                      formControlName="contact"
+                      placeholder="Your Phone Number"
+                      required
+                    />
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <input
+                      type="submit"
+                      class="btn btn-warning btn-lg ms-2"
+                      name="submit"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

@@ -1,3 +1,4 @@
+import { GetData } from './GetData';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Users } from './users.model';
@@ -17,7 +18,7 @@ export class UsersService {
 
   public addUser(name: any, email: any, password: any, contact: any) {
     return this.httpClient
-      .post<any>(this.baseUrl + 'users', {
+      .post<any>(this.baseUrl + 'register', {
         name,
         email,
         password,
@@ -41,5 +42,35 @@ export class UsersService {
           return response;
         })
       );
+  }
+  isLoggedin() {
+    return sessionStorage.getItem('email') != null;
+  }
+  uploadFile(
+    currentuser: any,
+    column_value: any,
+    time_period: any,
+    number_value: any,
+    file: any
+  ) {
+    const formData = new FormData();
+
+    // formData.append('file', file, file.name);
+    formData.append('currentuser', currentuser);
+    formData.append('column_value', column_value);
+    formData.append('time_period', time_period);
+    formData.append('number_value', number_value);
+    formData.append('file', file);
+    console.log(JSON.stringify(formData));
+
+    return this.httpClient.post(this.baseUrl + 'upload', formData);
+    // {
+
+    //   currentuser,
+    //   column_value,
+    //   time_period,
+    //   number_value,
+    //   file,
+    // });
   }
 }

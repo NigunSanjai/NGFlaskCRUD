@@ -7,3 +7,16 @@
 .card-registration .select-arrow {
   top: 13px;
 }
+.col-lg-6 {
+  flex: 0 0 auto;
+  width: 100 !important;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.block * {
+  width: 50%;
+  text-align: center;
+}
