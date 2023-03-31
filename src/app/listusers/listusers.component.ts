@@ -15,8 +15,10 @@ export class ListusersComponent {
   selectedValue!: string;
   selectedTimePeriod!: string;
   selectedNumber!: string;
+  title!: string;
   formData: any;
   public file: any;
+  users: string[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -44,36 +46,43 @@ export class ListusersComponent {
     //   });
     // get the `user_id` parameter from the route
   }
-  ngOnChange(event: any) {
-    this.selectedTimePeriod = event.target.value;
-  }
-  ngOnChange1(event: any) {
-    this.selectedValue = event.target.value;
-  }
-  ngOnChange2(event: any) {
-    this.selectedNumber = event.target.value;
-  }
+  // ngOnChange(event: any) {
+  //   this.selectedTimePeriod = event.target.value;
+  // }
+  // ngOnChange1(event: any) {
+  //   this.selectedValue = event.target.value;
+  // }
+  // ngOnChange2(event: any) {
+  //   this.selectedNumber = event.target.value;
+  // }
+  // ngOnChange3(event: any) {
+  //   this.title = event.target.value;
+  // }
   getFile(event: any) {
     this.file = event.target.files[0];
     console.log(this.file);
   }
   onSubmit() {
-    console.log(this.currentUser);
-    console.log('Hello');
-    const fileInput = this.dashboardForm.controls['file']?.value;
-
-    if (fileInput) {
+    if (this.file) {
       this.usersService
         .uploadFile(
           this.currentUser,
-          this.selectedTimePeriod,
-          this.selectedValue,
-          this.selectedNumber,
+          // this.title,
+          // this.selectedValue,
+          // this.selectedTimePeriod,
+          // this.selectedNumber,
           this.file
         )
         .subscribe(
           (response: any) => {
             console.log('File uploaded successfully!', response);
+            this.usersService
+              .getFilenames(this.currentUser)
+              .subscribe((data: any) => {
+                this.users = data;
+                localStorage.setItem('users', JSON.stringify(this.users));
+              });
+            this.router.navigate(['/userdashboard'], {});
           },
           (error: any) => {
             console.error('Error uploading file:', error);

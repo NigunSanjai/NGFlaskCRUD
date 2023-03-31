@@ -1,4 +1,4 @@
-<!-- <section
+<section
   class="h-100 gradient-form gradient-custom-2"
   style="background-color: #eee"
 >
@@ -20,7 +20,7 @@
                   </h4>
                 </div>
 
-                <form (ngSubmit)="onSubmit()" [formGroup]="dashboardForm">
+                <form (ngSubmit)="onSubmit()" [formGroup]="userdashboardForm">
                   <p
                     style="
                       margin-bottom: 10px;
@@ -127,14 +127,15 @@
                         align-items: center;
                       "
                     >
-                      <label class="mr-2">Upload your CV:</label>
-                      <input
-                        type="file"
-                        name="file"
-                        accept=".csv"
-                        name="file"
-                        (change)="getFile($event)"
-                      />
+                      <select (change)="onFileSelect($event)">
+                        <option value="">Select a file</option>
+                        <option
+                          *ngFor="let fileName of fileNames"
+                          [value]="fileName"
+                        >
+                          {{ fileName }}
+                        </option>
+                      </select>
                     </div>
                   </div>
 
@@ -153,8 +154,8 @@
       </div>
     </div>
   </div>
-</section> -->
-<!-- <form method="post" (ngSubmit)="onSubmit()" [formGroup]="dashboardForm">
+</section>
+<!--<form method="post" (ngSubmit)="onSubmit()" [formGroup]="dashboardForm">
   <label for="apply"
     ><input
       type="file"
@@ -168,35 +169,3 @@
     <input type="submit" class="btn btn-warning btn-lg ms-2" name="submit" />
   </div>
 </form> -->
-<div class="frame">
-  <div class="center">
-    <div class="title">
-      <h1>Drop file to upload</h1>
-    </div>
-
-    <div class="dropzone">
-      <form method="post" (ngSubmit)="onSubmit()" [formGroup]="dashboardForm">
-        <img
-          src="http://100dayscss.com/codepen/upload.svg"
-          class="upload-icon"
-        />
-        <input
-          type="file"
-          name="file"
-          accept=".csv"
-          (change)="getFile($event)"
-          class="upload-input"
-        />
-        <!-- <button type="button" class="btn" name="uploadbutton">
-          Upload file
-        </button> -->
-        <div class="text-center pt-1 mb-5 pb-1">
-          <input type="submit" class="btn" name="submit" />
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-<!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
-
-<!-- NO JS ADDED YET -->

@@ -1,3 +1,4 @@
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
@@ -13,6 +14,7 @@ const routes: Routes = [
     canActivate: [GuardGuard],
   },
   { path: '', component: LoginComponent },
+  { path: 'userdashboard', component: UserdashboardComponent },
 ];
 
 @NgModule({

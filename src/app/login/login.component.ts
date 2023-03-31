@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     const email = this.loginForm.get('email')?.value;
     const password = this.loginForm.get('password')?.value;
-    debugger;
     this.usersService.checkUser(email, password).subscribe((response) => {
       if (response.result) {
         sessionStorage.setItem('email', email);

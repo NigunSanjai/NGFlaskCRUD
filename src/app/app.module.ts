@@ -7,12 +7,14 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListusersComponent } from './listusers/listusers.component';
 import { LoginComponent } from './login/login.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     ListusersComponent,
     LoginComponent,
+    UserdashboardComponent,
   ],
   imports: [
     BrowserModule,
